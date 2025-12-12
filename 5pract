@@ -1,0 +1,60 @@
+#5.1
+m = [ "круг" ,  0.25 , "квадрат" , "треугольник" , 15 , "круг" , "овал" , 10 ]
+m.remove (0.25)
+m.remove (10)
+m.remove (15)
+print(m)
+#5.2
+abc = ["A","B","C","D","E","F","G"]
+del abc[1 : 5]
+print(abc)
+#5.3
+a= [1,4]
+a.insert (1,2)
+a.insert (2,3)
+print (a)
+
+#5.4
+mass = [14,-6,3,11,6,8.5,99,-20,-6,10,40,0.25,-4,5]
+del mass [1]
+del mass [7]
+del mass [6]
+del mass [9]
+mass.sort()
+print(mass)
+mass.sort(reverse=True)
+print(mass)
+
+#5.5
+a=int(input("Введите  кол-во чисел"))
+
+n = []
+p = []
+z = []
+for i in range(a):
+    b = float(input("Ведите чилса"))
+    if b < 0:
+        n.append(b)
+    elif b > 0:
+        p.append(b)
+    else:
+        z.append(b)
+
+sum_n = sum(n)
+
+if len(p)>0:
+    avg_p = sum(p) / len(p)
+else:
+    avg.p = None
+print(sum_n)
+
+if avg_p is not None:
+    print(avg_p)
+else:
+    print("Положительных чисел нет")
+
+if z:
+    s = ["*" for _ in z]
+    print(f"кол-во звёзд {len (s)}{s}")
+else:
+    print("нулей нет")
