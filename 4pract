@@ -1,0 +1,382 @@
+#1.1
+a = int(input())
+
+if a < 0:
+    a = abs(a)
+elif a == 0:
+    a = 1
+
+print(a)
+#1.2
+a = input()
+b = False
+
+for i in a:
+    if i == '.' or i == ',':
+        b = True
+        break
+else:
+    b = False
+
+print(b)
+#1.3
+a = int(input())
+b = int(input())
+
+if a % 3 == 0 and b % 3 == 0:
+    print(True)
+elif a % 3 == 0 or b % 3 == 0:
+    print("Одно число делится на 3")
+else:
+    print(False)
+
+#2.1
+n = int(input())
+
+if n > 100:
+    print('*')
+elif n > 0:
+    for i in range(n):
+        print('*', end='')
+    print()
+
+#2.2
+a = input()
+b = input()
+
+if a == b:
+    print(True)
+else:
+    print(False)
+
+#2.3
+r = int(input())
+g = int(input())
+b = int(input())
+
+if r == 0 and g == 0 and b == 0:
+    print("Чёрный цвет")
+elif r == 255 and g == 255 and b == 255:
+    print("Белый цвет")
+elif r == 255 and g == 0 and b == 0:
+    print("Красный цвет")
+elif r == 0 and g == 255 and b == 0:
+    print("Зелёный цвет")
+elif r == 0 and g == 0 and b == 255:
+    print("Синий цвет")
+else:
+    print("Нет цвета")
+
+#3.1
+a = int(input())
+
+if a > 0:
+    print(a - 1, a, a + 1)
+else:
+    a = 1
+    print(a - 1, a, a + 1)
+
+#3.2
+a = input()
+
+if a.endswith('.doc'):
+    print("Word file")
+elif a.endswith('.py'):
+    print("Python file")
+elif a.endswith('.txt'):
+    print("Text file")
+else:
+    print("Unknown extension")
+
+#3.3
+a = float(input())
+b = float(input())
+c = float(input())
+
+if a == b == c:
+    print("Равносторонний")
+elif a == b or b == c or a == c:
+    print("Равнобедренный")
+else:
+    print("Разносторонний")
+
+#4.1
+a = 'important information in one line'
+b = input()
+
+if b in a:
+    print(True)
+else:
+    print(False)
+
+#4.2
+a = float(input())
+b = float(input())
+
+if a == b:
+    print(f"Квадрат, площадь: {a * b}")
+else:
+    print(f"Прямоугольник, площадь: {a * b}")
+
+#4.3
+a = input("Как твои дела? ").lower()
+
+if a in ["хорошо", "нормально", "отлично"]:
+    print("😊")
+elif a in ["плохо", "не хорошо", "..."]:
+    print("☹️")
+else:
+    print("😒")
+
+#5.1
+a = float(input())
+b = float(input())
+
+if a > b:
+    print(a ** b)
+elif b > a:
+    print(b ** a)
+else:
+    print(a + b)
+
+#5.2
+new_message = "Hello! How are you?"
+user_message = input()
+
+if new_message[0] == user_message[0]:
+    print(True)
+else:
+    print(False)
+
+#5.3
+a = float(input())
+b = float(input())
+
+if a > b:
+    print(f"Первый отрезок длиннее на {a - b}")
+elif b > a:
+    print(f"Второй отрезок длиннее на {b - a}")
+else:
+    print("Отрезки равны")
+
+#6.1
+a = input()
+
+if a[0] == a[-1]:
+    print(True)
+else:
+    print(False)
+
+#6.2
+a = int(input())
+
+if a % 2 == 0:
+    print(a ** 2)
+elif a % 3 == 0:
+    print(a ** 3)
+else:
+    print(a * 100)
+
+#6.3
+a = int(input())
+b = int(input())
+
+if a < 0 and b < 0:
+    print(False)
+elif a < 0:
+    print(a + 1000, b)
+elif b < 0:
+    print(a, b + 1000)
+else:
+    print(True)
+
+#7.1
+b = input()
+a = b[-1]
+
+if a in ['я', 'и', 'е', 'ю']:
+    print(True)
+else:
+    print(False)
+
+#7.2
+a = float(input())
+b = float(input())
+c = float(input())
+
+if a > 0 and b > 0 and c > 0 and (a + b > c) and (a + c > b) and (b + c > a):
+    print(True)
+else:
+    print(False)
+
+#7.3
+a = int(input())
+b = a % 10
+
+if b == 0:
+    print(a ** 10)
+elif b == 1:
+    print(a / 3)
+elif b == 2:
+    print(a // 2)
+else:
+    print(a ** 2)
+
+#8.1
+a = input()
+
+if len(a) < 8 or a == "qwerty123":
+    print(False)
+else:
+    print(True)
+
+#8.2
+pc_number = 777
+a = int(input())
+b = int(input())
+
+if (a < pc_number < b) or (b < pc_number < a):
+    print(True)
+else:
+    print(False)
+
+#8.3
+lamp_1 = 0
+lamp_2 = 0
+a = input("Какую лампочку зажечь? ")
+
+if a == "1":
+    lamp_1 = 1
+    print("Первая лампочка горит")
+elif a == "2":
+    lamp_2 = 1
+    print("Вторая лампочка горит")
+else:
+    print("Обе лампочки не горят")
+
+#9.1
+switch_1 = False
+switch_2 = False
+answer = input("Включить? ").lower()
+
+if answer == "да":
+    switch_1 = True
+    switch_2 = True
+    print("Всё включено", switch_1, switch_2)
+else:
+    print(switch_1, switch_2)
+
+#9.2
+a = int(input())
+
+if a > 0:
+    if a % 2 == 0:
+        print(True, "even")
+    else:
+        print(True, "odd")
+else:
+    print(False)
+
+#9.3
+a = input()
+
+if a.startswith('/'):
+    print("command")
+else:
+    print("It's string")
+
+#10.1
+a = input()
+b = len(a)
+
+if b == 0:
+    print(None)
+elif b <= 5:
+    print("short")
+elif 6 <= b <= 10:
+    print("normal")
+else:
+    print("long")
+
+#10.2
+a = int(input())
+
+if a < 0:
+    a = 1000000
+    print(a)
+elif a == 0:
+    a = 2
+    print(a ** 2)
+else:
+    print(a ** 3)
+
+#10.3
+number_1 = 10
+number_2 = 100
+user_num = int(input())
+
+if number_1 < user_num < number_2:
+    print(True)
+else:
+    print(False)
+#11.1
+prog_num = 0
+a = int(input())
+b = int(input())
+
+if a < 0 and b < 0:
+    prog_num = a + b
+    print(prog_num)
+elif a > 0 and b > 0:
+    prog_num = a - b
+    print(prog_num)
+else:
+    print(False)
+
+#11.2
+a = int(input())
+
+if a % 2 != 0:
+    print(a + 1)
+else:
+    print(True)
+
+#11.3
+a = input()
+
+if len(a) > 10:
+    print(a[:5])
+else:
+    print(a)
+
+#12.1
+ru = 'абвгджеёжзийлмнопрстуфхцчщъыьэюя'
+en = 'abcdefghijklmnopqrstuvwxyz'
+letter = input()
+
+if letter in ru:
+    print("rus")
+elif letter in en:
+    print("eng")
+else:
+    print(None)
+
+#12.2
+pc_num = 10
+a = int(input())
+
+if a in [pc_num-1, pc_num, pc_num+1]:
+    print(True)
+else:
+    print(False)
+
+#12.3
+correct_answer = (221 - 13) * 2
+a = int(input("(221 - 13) * 2 = "))
+
+if a == correct_answer:
+    print(True)
+elif a > correct_answer:
+    print(">")
+else:
+    print("<")
