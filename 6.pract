@@ -67,4 +67,21 @@ for i, row in enumerate(random_elements):
     for j, elem in enumerate(row):
         if j % 2 == 1:
             print(f"Элемент [{i}][{j}]: {elem}")
+
+#6.5
+a = int(input("Введите количество строк: "))
+
+b = int(input("Введите количество столбцов: "))
+
+matrix = []
+
+for i in range(a):
+    c = []
+    for j in range(b):
+        value = input(f"Введите значение элемента [{i}][{j}]: ")
+        c.append(value)
+    matrix.append(c)
+print("\nВаш двумерный массив:")
+for c in matrix:
+    print(c)
 """""""""
