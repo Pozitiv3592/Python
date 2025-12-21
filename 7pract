@@ -1,0 +1,157 @@
+#7.1
+a = [
+    ['folder', 'coursework.doc', 'folder', 'pict.png', 'data.accdb'],
+    ['icon.ico', 'script.js', 'index.html', 'style.css', 'prog.py'],
+    ['my_song.mp3', 'anapa-2003.jpg', 'cs_1.6.exe', 'folder', 'cheat.txt'],
+    ['notes.txt', 'main.py', 'work.pdf', 'cartoon.mp4', 'array.py'],
+    ['project.psd', 'cycle.py', 'folder', 'cycle.js', 'turtle.py']
+]
+
+
+print("начальный список")
+for row in a:
+    print(row)
+print()
+
+modified_table = []
+for row in a:
+    b = []
+    for item in row:
+        if item == 'folder':
+            continue
+        if item == 'data.accdb':
+            b.append('data.sql')
+        else:
+            b.append(item)
+    modified_table.append(b)
+
+print("без папок и с заменой data")
+for row in modified_table:
+    print(row)
+print()
+
+py_files = []
+for row in a:
+    for item in row:
+        if item.endswith('.py'):
+            py_files.append(item)
+
+print("все файлы.py")
+print(' '.join(py_files))
+print()
+
+js_files = []
+for row in a:
+    for item in row:
+        if item.endswith('.js'):
+            js_files.append(f"new_{item}")
+
+print("все new_файлы.js")
+print(' '.join(js_files))
+print("\n" + "="*50 + "\n")
+#7.2
+a = ["ноль", "один", "два", "три", "четыре", "пять",
+             "шесть", "семь", "восемь", "девять"]
+b = input("Введите число от 0 до 9: ")
+
+c = False
+n = -1  
+
+if b == "0":
+    c = True
+    n = 0
+elif b == "1":
+    c = True
+    n = 1
+elif b == "2":
+    c = True
+    n = 2
+elif b == "3":
+    c = True
+    n = 3
+elif b == "4":
+    c = True
+    n = 4
+elif b == "5":
+    c = True
+    n = 5
+elif b == "6":
+    c = True
+    n = 6
+elif b == "7":
+    c = True
+    n = 7
+elif b == "8":
+    c = True
+    n = 8
+elif b == "9":
+    c = True
+    n = 9
+
+if c:
+    for i in range(n + 1):
+        print(a[i])
+else:
+    print("Введите число <= 9")
+
+print("\n" + "="*50 + "\n")
+
+#7.3
+bin_sy = ['11011111', '11011101', '11000111', '11011100', '11011110']
+
+print("Десятичные значения:")
+
+# Просто выводим все числа
+for a in bin_sy:
+    print(int(a, 2))
+
+# Создаем список для поиска max/min
+b = []
+for a in bin_sy:
+    b.append(int(a, 2))
+
+print(f"\nМаксимальное: {max(b)}")
+print(f"Минимальное: {min(b)}")
+
+#7.4
+matrix = [
+    [1, 2, 3],
+    [4, 'слово', 6],
+    [7, 8, 9]
+]
+
+print("Исходная матрица:")
+for a in matrix:
+    print(a)
+
+for i, a in enumerate(matrix):
+    for j, element in enumerate(a):
+        if isinstance(element, str):
+            matrix[i][j] = len(element)
+
+print("\nМатрица после замены:")
+for a in matrix:
+    print(a)
+
+total_sum = sum(sum(a) for a in matrix)
+print(f"\nСумма всех элементов: {total_sum}")
+print("\n" + "="*50 + "\n")
+#7.5
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print("Матрица 3x3:")
+for row in matrix:
+    print(row)
+
+# Сумма диагонали справа налево (главная диагональ)
+# Диагональ: [0][0], [1][1], [2][2]
+a = 0
+for i in range(3):
+    a += matrix[i][i]
+
+print(f"\nСумма элементов по диагонали (главной): {a}")
+print("Расчет: 1 + 5 + 9 = 15" if a == 15 else f"Расчет: {matrix[0][0]} + {matrix[1][1]} + {matrix[2][2]} = {a}")
