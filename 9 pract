@@ -1,0 +1,60 @@
+notebook = {}
+
+def add_note():
+    global notebook
+    header = input("Header: ")
+    text = input("Text: ")
+    notebook[header] = text
+    print("Note added successfully.\n")
+
+def read_notes():
+    global notebook
+    if not notebook:
+        print("Заметок нет.\n")
+        return
+
+    print(", ".join(notebook.keys()))
+    note_to_read = input("Which note to read?\n> ")
+
+    if note_to_read in notebook:
+        print(notebook[note_to_read] + "\n")
+    else:
+        print("Такой заметки нет\n")
+
+def delete_note():
+    global notebook
+    if not notebook:
+        print("Заметок нет.\n")
+        return
+
+    print(", ".join(notebook.keys()))
+    note_to_delete = input("Which note to delete?\n> ")
+
+    if note_to_delete in notebook:
+        notebook.pop(note_to_delete)
+        print(f"Note {note_to_delete} removed\n")
+    else:
+        print("Такой заметки нет\n")
+
+def menu():
+    while True:
+        print("[1] - Create a new note.")
+        print("[2] - Read all notes.")
+        print("[3] - Delete entry.")
+        print("[4] - Exit.")
+        choice = input("> ")
+
+        if choice == "1":
+            add_note()
+        elif choice == "2":
+            read_notes()
+        elif choice == "3":
+            delete_note()
+        elif choice == "4":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.\n")
+
+if __name__ == "__main__":
+    menu()
