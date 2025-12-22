@@ -1,0 +1,21 @@
+#11.1
+x = lambda a, b: a * b
+
+
+print(x(2, 3))
+
+#11.2
+
+a = int(input("Всего чисел будет: "))
+
+b = []
+
+for i in range(a):
+    c = int(input())
+    b.append(c)
+
+
+
+filtered_numbers = list(filter(lambda x: x % 3 == 0 and x % 5 == 0, b))
+
+print(filtered_numbers)
