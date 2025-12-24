@@ -1,0 +1,31 @@
+import random
+
+def maze_game_simple():
+    left = straight = right = 0
+    
+    print("Начинаем игру. Повороты: [a]-Налево, [w]-Прямо, [d]-Направо")
+    
+    while True:
+        move = input("Куда идти? ").lower()
+        
+        if move == 'a':
+            left += 1
+            action = "Повернул налево."
+        elif move == 'w':
+            straight += 1
+            action = "Пошёл прямо."
+        elif move == 'd':
+            right += 1
+            action = "Повернул направо."
+        else:
+            print("Скорость и диаметр должны быть положительными числами!")
+            continue
+        
+        if random.randint(1, 10) == 1:
+            print(f"{action} Выход найден. Ты выиграл.")
+            print(f"Для того, чтобы найти выход ты {left} раз повернул налево, {straight} раз пошёл прямо и {right} раз повернул направо.")
+            break
+        else:
+            print(f"{action} Выхода пока нет...")
+
+maze_game_simple()
