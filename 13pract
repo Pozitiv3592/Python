@@ -1,0 +1,49 @@
+#1
+def alpha(пайтон):
+    alphabet = list('абвгдеёжзийклмнопрстуфхцчшщъыьэюя')
+    a = []
+    
+    print(' '.join(alphabet))
+    
+    for i in пайтон.lower():
+        if i in alphabet:
+            if i not in a:
+                a.append(i)
+            alphabet.remove(i)
+    
+
+    print(' '.join(a), ' '.join(alphabet))
+#2
+def create_calendar(month, year, days):
+    print(f"calendar: {month} {year}")
+    
+    for i in range(0, days, 7):
+        row = []
+        for j in range(7):
+            day_num = i + j + 1
+            if day_num <= days:
+                row.append(str(day_num))
+        print(' '.join(row))
+#3
+def bin_sys(start, end):
+    total = 0
+    for num in range(start, end + 1):
+        binary = bin(num)[2:]
+        print(binary)
+        total += num
+    print(f"сумма: {bin(total)[2:]}")
+#4
+def begin(field, row, col):
+    field[row][col] = '*'
+    
+    for i in range(len(field)):
+        for j in range(len(field[i])):
+            print(field[i][j], end=' ')
+        print()
+#5
+def _numbers(start, step=1):
+    print(f"[{start}] [{start + 1 * step}]\n[{start + 1 * step + 2 * step}] [{start + 1 * step + 2 * step + 3 * step}]")
+
+#6
+def exam(text, letter):
+    return text.lower().count(letter.lower())
