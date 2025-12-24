@@ -1,0 +1,74 @@
+import random
+import time
+
+def loading():
+    """Функция загрузки от 1% до 100%"""
+    print("Загрузка...")
+    for i in range(1, 101):
+        time.sleep(0.03)
+        print(f"\rПрогресс: {i}%", end='')
+    print("\nГотово!")
+
+figures = [
+    {
+        'target': ['┌', '┐', '└', '┘'],
+        'variants': ['┌', '┐', '└', '┘', '─', '│', '┼', '├', '┤', '┬', '┴']
+    },
+    {
+        'target': ['/', '\\', '\\', '/'],
+        'variants': ['/', '\\', '|', '-', '+', 'x', '*', 'o']
+    }
+]
+
+def show_figure(elements):
+    """Показать фигуру в виде 2x2"""
+    print(f"  {elements[0]} {elements[1]}")
+    print(f"  {elements[2]} {elements[3]}")
+
+def main_game():
+    loading()
+    
+    fig_index = random.randint(0, 1)
+    figure = figures[fig_index]
+    
+    print("\n" + "="*40)
+    print(f"Фигура #{fig_index + 1}")
+    print("="*40)
+    
+    print("Должна получиться такая фигура:")
+    show_figure(figure['target'])
+    print()
+    
+    current = [random.choice(figure['variants']) for _ in range(4)]
+    
+    moves = 0
+    
+    while True:
+        moves += 1
+        print(f"\nХод #{moves}")
+        print("Текущая фигура:")
+        show_figure(current)
+        
+        if current == figure['target']:
+            print("\n✅ ФИГУРА СОБРАНА!")
+            print(f"Потребовалось ходов: {moves}")
+            break
+        
+        print("\nЭлементы: 1 2")
+        print("          3 4")
+        
+        try:
+            choice = int(input("Какой элемент изменить (1-4)? "))
+            if choice < 1 or choice > 4:
+                print("Введите число от 1 до 4!")
+                continue
+                
+            current[choice-1] = random.choice(figure['variants'])
+            print(f"Элемент {choice} изменен!")
+            
+        except:
+            print("Ошибка ввода!")
+
+
+if __name__ == "__main__":
+    main_game()
