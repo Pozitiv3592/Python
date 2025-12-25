@@ -1,0 +1,47 @@
+import webbrowser
+import urllib.request
+import urllib.error
+
+def check_internet_connection():
+
+    try:
+        urllib.request.urlopen("https://www.google.com", timeout=5)
+        return True
+    except (urllib.error.URLError, ConnectionError):
+        return False
+
+def main():
+    print("Проверка подключения к интернету...")
+    
+    if not check_internet_connection():
+        print("Соединение не установлено.")
+        print("Проверьте подключение к интернету.")
+        return
+    
+    print("Соединение стабильно.")
+    
+    query = input("Введите запрос: ").strip()
+    
+    while True:
+        print("\nВыбор поисковой системы:")
+        print("[1] - Google")
+        print("[2] - Яндекс")
+        
+        choice = input("> ").strip()
+        
+        if choice == "1":
+            url = f"https://www.google.com/search?q={urllib.parse.quote(query)}"
+            webbrowser.open(url)
+            break
+        elif choice == "2":
+
+            url = f"https://yandex.ru/search/?text={urllib.parse.quote(query)}"
+            webbrowser.open(url)
+            break
+        else:
+            print("Выберите из предложенных вариантов.")
+
+if __name__ == "__main__":
+
+    import urllib.parse
+    main()
